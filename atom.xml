@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
-  
+  <title>青柠学优</title>
+  <subtitle>青柠学优 wings</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://wupengfei1987.github.io/"/>
   <updated>2016-10-20T12:53:51.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://wupengfei1987.github.io/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>wupengfei</name>
     
   </author>
   
@@ -17,8 +17,8 @@
   
   <entry>
     <title>postMan</title>
-    <link href="http://yoursite.com/2016/10/20/postMan/"/>
-    <id>http://yoursite.com/2016/10/20/postMan/</id>
+    <link href="https://wupengfei1987.github.io/post/postMan/"/>
+    <id>https://wupengfei1987.github.io/post/postMan/</id>
     <published>2016-10-20T12:49:07.000Z</published>
     <updated>2016-10-20T12:53:51.000Z</updated>
     
@@ -83,8 +83,8 @@
   
   <entry>
     <title>hello,word</title>
-    <link href="http://yoursite.com/2016/10/20/hello-word/"/>
-    <id>http://yoursite.com/2016/10/20/hello-word/</id>
+    <link href="https://wupengfei1987.github.io/post/hello-word/"/>
+    <id>https://wupengfei1987.github.io/post/hello-word/</id>
     <published>2016-10-20T11:08:11.000Z</published>
     <updated>2016-10-20T11:08:11.000Z</updated>
     
@@ -97,8 +97,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2016/10/20/hello-world/"/>
-    <id>http://yoursite.com/2016/10/20/hello-world/</id>
+    <link href="https://wupengfei1987.github.io/post/hello-world/"/>
+    <id>https://wupengfei1987.github.io/post/hello-world/</id>
     <published>2016-10-20T10:43:22.000Z</published>
     <updated>2016-10-20T10:43:22.000Z</updated>
     
