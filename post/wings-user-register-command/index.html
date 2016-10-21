@@ -1,0 +1,474 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>wings_user_register_command | 青柠学优</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="wupengfei">
+    
+
+    
+    <meta name="description" content="app">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wings_user_register_command">
+<meta property="og:url" content="https://wupengfei1987.github.io/post/wings-user-register-command/index.html">
+<meta property="og:site_name" content="青柠学优">
+<meta property="og:description" content="app">
+<meta property="og:updated_time" content="2016-10-21T12:56:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="wings_user_register_command">
+<meta name="twitter:description" content="app">
+
+    
+    <link rel="alternative" href="/atom.xml" title="青柠学优" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="青柠学优" title="青柠学优"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="青柠学优">青柠学优</a></h1>
+				<h2 class="blog-motto">要有目标，不要瞎干，坚持，坚持，坚持</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/index">索引</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">简介</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:wupengfei1987.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/post/wings-user-register-command/" title="wings_user_register_command" itemprop="url">wings_user_register_command</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="wupengfei" target="_blank" itemprop="author">wupengfei</a>
+		
+  <p class="article-time">
+    <time datetime="2016-10-21T12:33:31.000Z" itemprop="datePublished"> 发表于 2016-10-21</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Command"><span class="toc-number">1.</span> <span class="toc-text">Command</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Service"><span class="toc-number">2.</span> <span class="toc-text">Service</span></a></li></ol>
+		
+		</div>
+		
+		<hr>
+<p>[TOC]</p>
+<blockquote>
+<p>用户注册功能</p>
+</blockquote>
+<h1 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@ApiMethod</span>(value = <span class="string">"user.register"</span>, auth = ApiMethod.Auth.OPTION)</div><div class="line"><span class="function"><span class="keyword">public</span> ApiResult <span class="title">execute</span><span class="params">(ApiCommandContext apiCommandContext,</span></span></div><div class="line">                         @ApiParam(<span class="string">"mobile"</span>) String mobile, </div><div class="line">                         @<span class="title">ApiParam</span><span class="params">(<span class="string">"password"</span>)</span> String password,</div><div class="line">                         @<span class="title">ApiParam</span><span class="params">(<span class="string">"code"</span>)</span> String code) &#123;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        User user = <span class="keyword">new</span> User();</div><div class="line">        <span class="keyword">if</span> (!RegexUtils.isPhone(mobile)) &#123;</div><div class="line">            logger.error(<span class="string">"illegal mobile=&#123;&#125;"</span>, mobile);</div><div class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ApiResult(ErrorCode.E_SYS_PARAM);</div><div class="line">        &#125;</div><div class="line">        password = StringUtils.trimToEmpty(password);</div><div class="line">        <span class="keyword">if</span> (!password.matches(<span class="string">"[a-zA-Z0-9\\-+_~!@#$%^&amp;*()=]&#123;6,20&#125;"</span>)) &#123;</div><div class="line">            logger.error(<span class="string">"password too simple or illegal password=&#123;&#125;"</span>, password);</div><div class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ApiResult(ErrorCode.E_SYS_PARAM);</div><div class="line">        &#125;</div><div class="line">        user.setMobile(mobile);</div><div class="line">        user.setPassword(password);</div><div class="line">        user.setUserName(mobile);</div><div class="line">        user.setIdentity(User.IDENTITY_INIT);</div><div class="line">        User oldUser = userService.queryByMobile(mobile);</div><div class="line">        <span class="keyword">if</span> (<span class="keyword">null</span> != oldUser) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ApiResult(ErrorCode.E_BIZ_ACCOUNT_EXIST);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">int</span> id = userService.addUser(user);</div><div class="line">        <span class="keyword">if</span> (id &gt; <span class="number">0</span>) &#123;</div><div class="line">            user.setId(id);</div><div class="line">            Session session = userService.updateUserSession(user, UserTicket.ORIGIN_APP);</div><div class="line">            <span class="keyword">if</span> (session != <span class="keyword">null</span>) &#123;</div><div class="line">                Map&lt;String, Object&gt; retMap = <span class="keyword">new</span> HashMap&lt;&gt;();</div><div class="line">                retMap.put(<span class="string">"t"</span>, session.getTicket());</div><div class="line">                retMap.put(<span class="string">"uid"</span>, session.getUserId());</div><div class="line">                retMap.put(<span class="string">"secretKey"</span>, session.getSecretKey());</div><div class="line">                <span class="keyword">return</span> <span class="keyword">new</span> ApiResult(ErrorCode.SUCCESS, retMap);</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">return</span> <span class="keyword">new</span> ApiResult(ErrorCode.FAIL);</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            logger.error(<span class="string">"create user error,mobile=&#123;&#125;,id=&#123;&#125;"</span>, mobile, id);</div><div class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ApiResult(ErrorCode.FAIL);</div><div class="line">        &#125;</div><div class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">        logger.error(<span class="string">"RPC error "</span>, e);</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ApiResult(ErrorCode.E_SYS_RPC_ERROR);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line">   </div><div class="line"><span class="number">1</span>.</div><div class="line">   <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">queryByMobile</span><span class="params">(String mobile)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> userDAO.queryByMobile(mobile);</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@SQL</span>(<span class="string">"SELECT "</span> + COLUMNS + <span class="string">" FROM "</span> + TABLE_NAME + <span class="string">" WHERE mobile = :1"</span>)</div><div class="line">	<span class="function">User <span class="title">queryByMobile</span><span class="params">(String mobile)</span></span>;</div><div class="line"></div><div class="line">    </div><div class="line"><span class="number">2</span>. </div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">addUser</span><span class="params">(User user)</span> </span>&#123;</div><div class="line">        String salt = getSalt();</div><div class="line">        user.setSalt(salt);</div><div class="line">        user.setPassword(getPassword(user.getPassword(), salt));</div><div class="line">        user.setStatus(User.STATUS_OK);</div><div class="line">        user.setUserName(StringUtils.trimToEmpty(user.getUserName()));</div><div class="line">        user.setEmail(StringUtils.trimToEmpty(user.getEmail()));</div><div class="line">        user.setMobile(StringUtils.trimToEmpty(user.getMobile()));</div><div class="line">        <span class="keyword">int</span> id = userDAO.insertUser(user);</div><div class="line">        <span class="keyword">return</span> id;</div><div class="line">    &#125;</div><div class="line">	<span class="meta">@ReturnGeneratedKeys</span></div><div class="line">	<span class="meta">@SQL</span>(<span class="string">"INSERT INTO user (user_name,email,mobile,password,salt,status,identity,create_time,update_time) VALUES"</span> +<span class="string">"(:u.userName,:u.email,:u.mobile,:u.password,:u.salt,:u.status,:u.identity,NOW(),NOW())"</span>)</div><div class="line">	<span class="function"><span class="keyword">int</span> <span class="title">insertUser</span><span class="params">(@SQLParam(<span class="string">"u"</span>)</span> User user)</span>;</div><div class="line">	</div><div class="line"></div><div class="line"><span class="number">3</span>. </div><div class="line">  </div><div class="line">   <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Session <span class="title">updateUserSession</span><span class="params">(User user, <span class="keyword">int</span> origin)</span> </span>&#123;</div><div class="line">        Session session = SessionUtil.createSession(user.getId(), user.getPassword());</div><div class="line">        String ticket = session.getTicket();</div><div class="line">        UserTicket userTicket = userTicketDAO.queryByUserIdAndOrigin(user.getId(), origin);</div><div class="line">        String secretKey = SecurityUtils.genSecretKey();</div><div class="line">        session.setSecretKey(secretKey);</div><div class="line">        <span class="keyword">int</span> rs;</div><div class="line">        <span class="keyword">if</span> (userTicket == <span class="keyword">null</span>) &#123;</div><div class="line">            userTicket = <span class="keyword">new</span> UserTicket();</div><div class="line">            userTicket.setUserId(user.getId());</div><div class="line">            userTicket.setSecretKey(secretKey);</div><div class="line">            userTicket.setOrigin(origin);</div><div class="line">            userTicket.setTicket(ticket);</div><div class="line">            rs = userTicketDAO.insertUserTicket(userTicket);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            userTicket.setTicket(ticket);</div><div class="line">            rs = userTicketDAO.updateUserPassport(userTicket, secretKey);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (rs &gt; <span class="number">0</span>) &#123;</div><div class="line">            cacheService.set(getPassportCacheKey(user.getId(), origin), session, ConstantCache.TIME_ONE_DAY);</div><div class="line">            <span class="keyword">return</span> session;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">	<span class="meta">@SQL</span>(<span class="string">"SELECT "</span> + COLUMNS + <span class="string">" FROM "</span> + TABLE_NAME + <span class="string">" WHERE user_id=:1 AND origin=:2"</span>)</div><div class="line">	<span class="function">UserTicket <span class="title">queryByUserIdAndOrigin</span><span class="params">(<span class="keyword">long</span> userId, <span class="keyword">int</span> origin)</span></span>;</div><div class="line"></div><div class="line"><span class="meta">@ReturnGeneratedKeys</span></div><div class="line">	<span class="meta">@SQL</span>(<span class="string">"INSERT INTO "</span>+TABLE_NAME+<span class="string">" (user_id,origin,ticket,secret_key,create_time,update_time) VALUES"</span> +</div><div class="line">			<span class="string">"(:t.userId,:t.origin,:t.ticket,:t.secretKey,NOW(),NOW())"</span>)</div><div class="line">	<span class="function"><span class="keyword">int</span> <span class="title">insertUserTicket</span><span class="params">(@SQLParam(<span class="string">"t"</span>)</span> UserTicket ticket)</span>;</div><div class="line"></div><div class="line">	<span class="meta">@SQL</span>(<span class="string">"UPDATE "</span>+TABLE_NAME +<span class="string">" SET ticket=:t.ticket,secret_key=:sk ,update_time =NOW()  WHERE user_id=:t.userId AND origin=:t.origin"</span>)</div><div class="line">	<span class="function"><span class="keyword">int</span> <span class="title">updateUserPassport</span><span class="params">(@SQLParam(<span class="string">"t"</span>)</span> UserTicket ticket, @<span class="title">SQLParam</span><span class="params">(<span class="string">"sk"</span>)</span> String secretKey)</span>;</div></pre></td></tr></table></figure>  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/wings/">wings</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/wings-command-user/">wings_command_user</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="https://wupengfei1987.github.io/post/wings-user-register-command/" data-title="wings_user_register_command | 青柠学优" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/post/hello/"  title="hello">
+ <strong>下一篇：</strong><br/> 
+ <span>hello
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="post/wings-user-register-command/" data-title="wings_user_register_command" data-url="https://wupengfei1987.github.io/post/wings-user-register-command/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Command"><span class="toc-number">1.</span> <span class="toc-text">Command</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Service"><span class="toc-number">2.</span> <span class="toc-text">Service</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/Android/" title="Android">Android<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/wings/" title="wings">wings<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="www.baidu.com" target="_blank" title="google+">google+</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="www.baidu.com" target="_blank" title="facebook">facebook</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> 青青子衿，忧忧我心。但为君故，沉吟至今 <br/>
+			学优</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="wupengfei">wupengfei</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+        getSize();
+        if (myWidth >= 1024) {
+          c.click();
+        }
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"青柠学优"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
