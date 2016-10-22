@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wupengfei1987.github.io/"/>
-  <updated>2016-10-21T14:02:27.000Z</updated>
+  <updated>2016-10-22T15:26:17.000Z</updated>
   <id>https://wupengfei1987.github.io/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>wings_admin_login</title>
+    <link href="https://wupengfei1987.github.io/post/wings-admin-login/"/>
+    <id>https://wupengfei1987.github.io/post/wings-admin-login/</id>
+    <published>2016-10-22T15:21:48.000Z</published>
+    <updated>2016-10-22T15:26:17.000Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<h1 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">"/login"</span>)</div><div class="line"><span class="function"><span class="keyword">public</span> ModelAndView <span class="title">toLogin</span><span class="params">(HttpServletRequest request,</span></span></div><div class="line">                            HttpServletResponse response) &#123;</div><div class="line">    ModelAndView mv = <span class="keyword">new</span> ModelAndView();</div><div class="line">    mv.setViewName(<span class="string">"login"</span>);</div><div class="line">    <span class="keyword">return</span> mv;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h1><blockquote>
+<p>暂时没有 </p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      web
+    
+    </summary>
+    
+      <category term="wings" scheme="https://wupengfei1987.github.io/categories/wings/"/>
+    
+    
+      <category term="wings_admin_user" scheme="https://wupengfei1987.github.io/tags/wings-admin-user/"/>
+    
+  </entry>
   
   <entry>
     <title>wings_user_update_command</title>
