@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wupengfei1987.github.io/"/>
-  <updated>2016-11-06T09:50:39.000Z</updated>
+  <updated>2016-11-10T02:32:42.000Z</updated>
   <id>https://wupengfei1987.github.io/</id>
   
   <author>
@@ -14,6 +14,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>e-book</title>
+    <link href="https://wupengfei1987.github.io/post/e-book/"/>
+    <id>https://wupengfei1987.github.io/post/e-book/</id>
+    <published>2016-11-10T02:22:29.000Z</published>
+    <updated>2016-11-10T02:32:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="书"><a href="#书" class="headerlink" title="书"></a>书</h1><h3 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h3><p>​     </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">图片</th>
+<th style="text-align:center">书名</th>
+<th style="text-align:center">下载</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="http://img11.360buyimg.com/n5/13243/2699afc5-7000-495e-babd-00833f336caf.jpg" alt="Spring框架高级编程"></td>
+<td style="text-align:center">Spring框架高级编程</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><h3 id="IOS"><a href="#IOS" class="headerlink" title="IOS"></a>IOS</h3><h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><h3 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h3><h3 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h3><h3 id="文学"><a href="#文学" class="headerlink" title="文学"></a>文学</h3>]]></content>
+    
+    <summary type="html">
+    
+      书
+    
+    </summary>
+    
+      <category term="书" scheme="https://wupengfei1987.github.io/categories/%E4%B9%A6/"/>
+    
+    
+      <category term="pdf" scheme="https://wupengfei1987.github.io/tags/pdf/"/>
+    
+  </entry>
   
   <entry>
     <title>2016-11-06 note</title>
