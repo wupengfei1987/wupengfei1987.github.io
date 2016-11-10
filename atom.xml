@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wupengfei1987.github.io/"/>
-  <updated>2016-11-10T03:02:15.000Z</updated>
+  <updated>2016-11-10T03:12:39.000Z</updated>
   <id>https://wupengfei1987.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://wupengfei1987.github.io/post/e-book/"/>
     <id>https://wupengfei1987.github.io/post/e-book/</id>
     <published>2016-11-10T02:22:29.000Z</published>
-    <updated>2016-11-10T03:02:15.000Z</updated>
+    <updated>2016-11-10T03:12:39.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="书"><a href="#书" class="headerlink" title="书"></a>书</h1><h3 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h3><p>​     </p>
 <table>
@@ -29,6 +29,7 @@
 <th style="text-align:center">图片</th>
 <th style="text-align:center">书名</th>
 <th style="text-align:center">下载</th>
+<th style="text-align:center">借阅</th>
 </tr>
 </thead>
 <tbody>
@@ -36,13 +37,16 @@
 <td style="text-align:center"><img src="https://img1.doubanio.com/lpic/s8990957.jpg" alt="Spring框架高级编程"></td>
 <td style="text-align:center">Spring框架高级编程</td>
 <td style="text-align:center"><a href="http://share.weiyun.com/6b28064831b677c88f64068ae75f528b" target="_blank" rel="external">链接</a></td>
+<td style="text-align:center">微信：wupengfeizhijia  QQ：3157529369</td>
 </tr>
 <tr>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
+<td style="text-align:center"></td>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
 </tr>
